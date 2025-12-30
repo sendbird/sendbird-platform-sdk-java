@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   SendbirdSortedMetaarrayInner.JSON_PROPERTY_VALUE
 })
 @JsonTypeName("SendbirdSortedMetaarray_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-30T12:02:06.082955+09:00[Asia/Seoul]")
 public class SendbirdSortedMetaarrayInner {
   public static final String JSON_PROPERTY_KEY = "key";
   private String key;

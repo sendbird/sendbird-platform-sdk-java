@@ -35,7 +35,7 @@ import org.sendbird.client.JSON;
   ResetChatHistoryResponse.JSON_PROPERTY_TS_MESSAGE_OFFSET
 })
 @JsonTypeName("resetChatHistoryResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-30T12:02:06.082955+09:00[Asia/Seoul]")
 public class ResetChatHistoryResponse {
   public static final String JSON_PROPERTY_TS_MESSAGE_OFFSET = "ts_message_offset";
   private Long tsMessageOffset;

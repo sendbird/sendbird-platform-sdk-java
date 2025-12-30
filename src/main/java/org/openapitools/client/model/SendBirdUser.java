@@ -61,7 +61,7 @@ import org.sendbird.client.JSON;
   SendbirdUser.JSON_PROPERTY_PHONE_NUMBER,
   SendbirdUser.JSON_PROPERTY_IS_CREATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-30T12:02:06.082955+09:00[Asia/Seoul]")
 public class SendbirdUser {
   public static final String JSON_PROPERTY_ACCESS_TOKEN = "access_token";
   private String accessToken;

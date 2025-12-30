@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   MigrateMessagesRequest.JSON_PROPERTY_UPDATE_READ_TS,
   MigrateMessagesRequest.JSON_PROPERTY_REWIND_READ_TS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-30T12:02:06.082955+09:00[Asia/Seoul]")
 public class MigrateMessagesRequest {
   public static final String JSON_PROPERTY_MESSAGES = "messages";
   private List<MigrateMessagesRequestMessagesInner> messages = null;

@@ -13,6 +13,7 @@ import org.openapitools.client.model.AddARegistrationOrDeviceTokenResponse;
 import org.openapitools.client.model.ChooseAPushNotificationContentTemplateRequest;
 import org.openapitools.client.model.ChooseAPushNotificationContentTemplateResponse;
 import org.openapitools.client.model.CreateAUserRequest;
+import org.openapitools.client.model.CreateUserMetadataRequest;
 import org.openapitools.client.model.CreateUserTokenRequest;
 import org.openapitools.client.model.CreateUserTokenResponse;
 import org.openapitools.client.model.GetChannelInvitationPreferenceResponse;
@@ -34,6 +35,8 @@ import org.openapitools.client.model.UpdatePushPreferencesForAChannelRequest;
 import org.openapitools.client.model.UpdatePushPreferencesForAChannelResponse;
 import org.openapitools.client.model.UpdatePushPreferencesRequest;
 import org.openapitools.client.model.UpdatePushPreferencesResponse;
+import org.openapitools.client.model.UpdateSpecificUserMetadataRequest;
+import org.openapitools.client.model.UpdateUserMetadataRequest;
 import org.openapitools.client.model.ViewCountPreferenceOfAChannelResponse;
 import org.openapitools.client.model.ViewNumberOfChannelsWithUnreadMessagesResponse;
 import org.openapitools.client.model.ViewNumberOfUnreadMessagesResponse;
@@ -45,7 +48,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-30T12:02:06.082955+09:00[Asia/Seoul]")
 public class UserApi {
   private ApiClient apiClient;
 
@@ -427,6 +430,123 @@ private ApiResponse<SendbirdUser> createAUserWithHttpInfo(String apiToken, Creat
     return new APIcreateAUserRequest();
   }
 
+private ApiResponse<Object> createUserMetadataWithHttpInfo(String userId, String apiToken, CreateUserMetadataRequest createUserMetadataRequest) throws ApiException {
+    Object localVarPostBody = createUserMetadataRequest;
+    
+    // verify the required parameter 'userId' is set
+    if (userId == null) {
+      throw new ApiException(400, "Missing the required parameter 'userId' when calling createUserMetadata");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v3/users/{user_id}/metadata"
+      .replaceAll("\\{" + "user_id" + "\\}", apiClient.escapeString(userId.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    if (apiToken != null)
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
+
+    return apiClient.invokeAPI("UserApi.createUserMetadata", localVarPath, "POST", localVarQueryParams, localVarPostBody,
+                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIcreateUserMetadataRequest {
+    private String userId;
+    private String apiToken;
+    private CreateUserMetadataRequest createUserMetadataRequest;
+
+    private APIcreateUserMetadataRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (optional)
+     * @return APIcreateUserMetadataRequest
+     */
+    public APIcreateUserMetadataRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set createUserMetadataRequest
+     * @param createUserMetadataRequest  (optional)
+     * @return APIcreateUserMetadataRequest
+     */
+    public APIcreateUserMetadataRequest createUserMetadataRequest(CreateUserMetadataRequest createUserMetadataRequest) {
+      this.createUserMetadataRequest = createUserMetadataRequest;
+      return this;
+    }
+
+    /**
+     * Execute createUserMetadata request
+     * @return Object
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute createUserMetadata request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return createUserMetadataWithHttpInfo(userId, apiToken, createUserMetadataRequest);
+    }
+  }
+
+  /**
+   * Create user metadata
+   * ## Create metadata When creating new items of the user metadata. https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-create-metadata
+   * @param userId (Required)  (required)
+   * @return createUserMetadataRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIcreateUserMetadataRequest createUserMetadata(String userId) throws ApiException {
+    return new APIcreateUserMetadataRequest(userId);
+  }
+
 private ApiResponse<CreateUserTokenResponse> createUserTokenWithHttpInfo(String userId, String apiToken, CreateUserTokenRequest createUserTokenRequest) throws ApiException {
     Object localVarPostBody = createUserTokenRequest;
     
@@ -648,6 +768,227 @@ private ApiResponse<Object> deleteAUserWithHttpInfo(String userId, String apiTok
    */
   public APIdeleteAUserRequest deleteAUser(String userId) throws ApiException {
     return new APIdeleteAUserRequest(userId);
+  }
+
+private ApiResponse<Object> deleteSpecificUserMetadataWithHttpInfo(String userId, String key, String apiToken) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'userId' is set
+    if (userId == null) {
+      throw new ApiException(400, "Missing the required parameter 'userId' when calling deleteSpecificUserMetadata");
+    }
+    
+    // verify the required parameter 'key' is set
+    if (key == null) {
+      throw new ApiException(400, "Missing the required parameter 'key' when calling deleteSpecificUserMetadata");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v3/users/{user_id}/metadata/{key}"
+      .replaceAll("\\{" + "user_id" + "\\}", apiClient.escapeString(userId.toString()))
+      .replaceAll("\\{" + "key" + "\\}", apiClient.escapeString(key.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    if (apiToken != null)
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
+
+    return apiClient.invokeAPI("UserApi.deleteSpecificUserMetadata", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
+                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIdeleteSpecificUserMetadataRequest {
+    private String userId;
+    private String key;
+    private String apiToken;
+
+    private APIdeleteSpecificUserMetadataRequest(String userId, String key) {
+      this.userId = userId;
+      this.key = key;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (optional)
+     * @return APIdeleteSpecificUserMetadataRequest
+     */
+    public APIdeleteSpecificUserMetadataRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute deleteSpecificUserMetadata request
+     * @return Object
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute deleteSpecificUserMetadata request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return deleteSpecificUserMetadataWithHttpInfo(userId, key, apiToken);
+    }
+  }
+
+  /**
+   * Delete user metadata
+   * ## Delete metadata https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-delete-metadata
+   * @param userId (Required)  (required)
+   * @param key  (required)
+   * @return deleteSpecificUserMetadataRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIdeleteSpecificUserMetadataRequest deleteSpecificUserMetadata(String userId, String key) throws ApiException {
+    return new APIdeleteSpecificUserMetadataRequest(userId, key);
+  }
+
+private ApiResponse<Object> deleteUserAllMetadataWithHttpInfo(String userId, String apiToken) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'userId' is set
+    if (userId == null) {
+      throw new ApiException(400, "Missing the required parameter 'userId' when calling deleteUserAllMetadata");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v3/users/{user_id}/metadata"
+      .replaceAll("\\{" + "user_id" + "\\}", apiClient.escapeString(userId.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    if (apiToken != null)
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
+
+    return apiClient.invokeAPI("UserApi.deleteUserAllMetadata", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
+                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIdeleteUserAllMetadataRequest {
+    private String userId;
+    private String apiToken;
+
+    private APIdeleteUserAllMetadataRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (optional)
+     * @return APIdeleteUserAllMetadataRequest
+     */
+    public APIdeleteUserAllMetadataRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute deleteUserAllMetadata request
+     * @return Object
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute deleteUserAllMetadata request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return deleteUserAllMetadataWithHttpInfo(userId, apiToken);
+    }
+  }
+
+  /**
+   * Delete user metadata
+   * ## Delete metadata You can delete a specific or all metadata of a user. Metadata stores additional user information such as their preference settings. https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-delete-metadata
+   * @param userId (Required)  (required)
+   * @return deleteUserAllMetadataRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIdeleteUserAllMetadataRequest deleteUserAllMetadata(String userId) throws ApiException {
+    return new APIdeleteUserAllMetadataRequest(userId);
   }
 
 private ApiResponse<GetChannelInvitationPreferenceResponse> getChannelInvitationPreferenceWithHttpInfo(String userId, String apiToken) throws ApiException {
@@ -2979,6 +3320,249 @@ private ApiResponse<UpdatePushPreferencesForAChannelResponse> updatePushPreferen
     return new APIupdatePushPreferencesForAChannelRequest(userId, channelUrl);
   }
 
+private ApiResponse<Object> updateSpecificUserMetadataWithHttpInfo(String userId, String key, String apiToken, UpdateSpecificUserMetadataRequest updateSpecificUserMetadataRequest) throws ApiException {
+    Object localVarPostBody = updateSpecificUserMetadataRequest;
+    
+    // verify the required parameter 'userId' is set
+    if (userId == null) {
+      throw new ApiException(400, "Missing the required parameter 'userId' when calling updateSpecificUserMetadata");
+    }
+    
+    // verify the required parameter 'key' is set
+    if (key == null) {
+      throw new ApiException(400, "Missing the required parameter 'key' when calling updateSpecificUserMetadata");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v3/users/{user_id}/metadata/{key}"
+      .replaceAll("\\{" + "user_id" + "\\}", apiClient.escapeString(userId.toString()))
+      .replaceAll("\\{" + "key" + "\\}", apiClient.escapeString(key.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    if (apiToken != null)
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
+
+    return apiClient.invokeAPI("UserApi.updateSpecificUserMetadata", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
+                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIupdateSpecificUserMetadataRequest {
+    private String userId;
+    private String key;
+    private String apiToken;
+    private UpdateSpecificUserMetadataRequest updateSpecificUserMetadataRequest;
+
+    private APIupdateSpecificUserMetadataRequest(String userId, String key) {
+      this.userId = userId;
+      this.key = key;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (optional)
+     * @return APIupdateSpecificUserMetadataRequest
+     */
+    public APIupdateSpecificUserMetadataRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set updateSpecificUserMetadataRequest
+     * @param updateSpecificUserMetadataRequest  (optional)
+     * @return APIupdateSpecificUserMetadataRequest
+     */
+    public APIupdateSpecificUserMetadataRequest updateSpecificUserMetadataRequest(UpdateSpecificUserMetadataRequest updateSpecificUserMetadataRequest) {
+      this.updateSpecificUserMetadataRequest = updateSpecificUserMetadataRequest;
+      return this;
+    }
+
+    /**
+     * Execute updateSpecificUserMetadata request
+     * @return Object
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute updateSpecificUserMetadata request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return updateSpecificUserMetadataWithHttpInfo(userId, key, apiToken, updateSpecificUserMetadataRequest);
+    }
+  }
+
+  /**
+   * Update specific user metadata
+   * ## Update metadata https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-update-metadata
+   * @param userId (Required)  (required)
+   * @param key  (required)
+   * @return updateSpecificUserMetadataRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIupdateSpecificUserMetadataRequest updateSpecificUserMetadata(String userId, String key) throws ApiException {
+    return new APIupdateSpecificUserMetadataRequest(userId, key);
+  }
+
+private ApiResponse<Object> updateUserMetadataWithHttpInfo(String userId, String apiToken, UpdateUserMetadataRequest updateUserMetadataRequest) throws ApiException {
+    Object localVarPostBody = updateUserMetadataRequest;
+    
+    // verify the required parameter 'userId' is set
+    if (userId == null) {
+      throw new ApiException(400, "Missing the required parameter 'userId' when calling updateUserMetadata");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v3/users/{user_id}/metadata"
+      .replaceAll("\\{" + "user_id" + "\\}", apiClient.escapeString(userId.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    if (apiToken != null)
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
+
+    return apiClient.invokeAPI("UserApi.updateUserMetadata", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
+                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIupdateUserMetadataRequest {
+    private String userId;
+    private String apiToken;
+    private UpdateUserMetadataRequest updateUserMetadataRequest;
+
+    private APIupdateUserMetadataRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (optional)
+     * @return APIupdateUserMetadataRequest
+     */
+    public APIupdateUserMetadataRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set updateUserMetadataRequest
+     * @param updateUserMetadataRequest  (optional)
+     * @return APIupdateUserMetadataRequest
+     */
+    public APIupdateUserMetadataRequest updateUserMetadataRequest(UpdateUserMetadataRequest updateUserMetadataRequest) {
+      this.updateUserMetadataRequest = updateUserMetadataRequest;
+      return this;
+    }
+
+    /**
+     * Execute updateUserMetadata request
+     * @return Object
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute updateUserMetadata request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return updateUserMetadataWithHttpInfo(userId, apiToken, updateUserMetadataRequest);
+    }
+  }
+
+  /**
+   * Update user metadata
+   * ## Update metadata When updating existing items of the user metadata by their keys or adding new items to the metadata https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-update-metadata
+   * @param userId (Required)  (required)
+   * @return updateUserMetadataRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIupdateUserMetadataRequest updateUserMetadata(String userId) throws ApiException {
+    return new APIupdateUserMetadataRequest(userId);
+  }
+
 private ApiResponse<SendbirdUser> viewAUserWithHttpInfo(String userId, Boolean includeUnreadCount, String customTypes, String superMode, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
@@ -3715,6 +4299,121 @@ private ApiResponse<ViewPushPreferencesForAChannelResponse> viewPushPreferencesF
    */
   public APIviewPushPreferencesForAChannelRequest viewPushPreferencesForAChannel(String userId, String channelUrl) throws ApiException {
     return new APIviewPushPreferencesForAChannelRequest(userId, channelUrl);
+  }
+
+private ApiResponse<Object> viewSpecificUserMetadataWithHttpInfo(String userId, String key, String apiToken) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'userId' is set
+    if (userId == null) {
+      throw new ApiException(400, "Missing the required parameter 'userId' when calling viewSpecificUserMetadata");
+    }
+    
+    // verify the required parameter 'key' is set
+    if (key == null) {
+      throw new ApiException(400, "Missing the required parameter 'key' when calling viewSpecificUserMetadata");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v3/users/{user_id}/metadata/{key}"
+      .replaceAll("\\{" + "user_id" + "\\}", apiClient.escapeString(userId.toString()))
+      .replaceAll("\\{" + "key" + "\\}", apiClient.escapeString(key.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    if (apiToken != null)
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
+
+    return apiClient.invokeAPI("UserApi.viewSpecificUserMetadata", localVarPath, "GET", localVarQueryParams, localVarPostBody,
+                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIviewSpecificUserMetadataRequest {
+    private String userId;
+    private String key;
+    private String apiToken;
+
+    private APIviewSpecificUserMetadataRequest(String userId, String key) {
+      this.userId = userId;
+      this.key = key;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (optional)
+     * @return APIviewSpecificUserMetadataRequest
+     */
+    public APIviewSpecificUserMetadataRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute viewSpecificUserMetadata request
+     * @return Object
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewSpecificUserMetadata request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return viewSpecificUserMetadataWithHttpInfo(userId, key, apiToken);
+    }
+  }
+
+  /**
+   * Get specific user metadata
+   * ## Get metadata https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-get-metadata
+   * @param userId (Required)  (required)
+   * @param key  (required)
+   * @return viewSpecificUserMetadataRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIviewSpecificUserMetadataRequest viewSpecificUserMetadata(String userId, String key) throws ApiException {
+    return new APIviewSpecificUserMetadataRequest(userId, key);
   }
 
 private ApiResponse<List<MarkChannelMessagesAsReadRequest>> viewWhoOwnsARegistrationOrDeviceTokenWithHttpInfo(String tokenType, String token, String apiToken) throws ApiException {

@@ -7,8 +7,11 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 | [**addARegistrationOrDeviceToken**](UserApi.md#addARegistrationOrDeviceToken) | **POST** /v3/users/{user_id}/push/{token_type} | Add a registration or device token |
 | [**chooseAPushNotificationContentTemplate**](UserApi.md#chooseAPushNotificationContentTemplate) | **PUT** /v3/users/{user_id}/push/template | Choose a push notification content template |
 | [**createAUser**](UserApi.md#createAUser) | **POST** /v3/users | Create a user |
+| [**createUserMetadata**](UserApi.md#createUserMetadata) | **POST** /v3/users/{user_id}/metadata | Create user metadata |
 | [**createUserToken**](UserApi.md#createUserToken) | **POST** /v3/users/{user_id}/token | Create user token |
 | [**deleteAUser**](UserApi.md#deleteAUser) | **DELETE** /v3/users/{user_id} | Delete a user |
+| [**deleteSpecificUserMetadata**](UserApi.md#deleteSpecificUserMetadata) | **DELETE** /v3/users/{user_id}/metadata/{key} | Delete user metadata |
+| [**deleteUserAllMetadata**](UserApi.md#deleteUserAllMetadata) | **DELETE** /v3/users/{user_id}/metadata | Delete user metadata |
 | [**getChannelInvitationPreference**](UserApi.md#getChannelInvitationPreference) | **GET** /v3/users/{user_id}/channel_invitation_preference | Get channel invitation preference |
 | [**leaveMyGroupChannels**](UserApi.md#leaveMyGroupChannels) | **PUT** /v3/users/{user_id}/my_group_channels/leave | Leave my group channels |
 | [**listMyGroupChannels**](UserApi.md#listMyGroupChannels) | **GET** /v3/users/{user_id}/my_group_channels | List my group channels |
@@ -24,12 +27,15 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 | [**updateCountPreferenceOfAChannel**](UserApi.md#updateCountPreferenceOfAChannel) | **PUT** /v3/users/{user_id}/count_preference/{channel_url} | Update count preference of a channel |
 | [**updatePushPreferences**](UserApi.md#updatePushPreferences) | **PUT** /v3/users/{user_id}/push_preference | Update push preferences |
 | [**updatePushPreferencesForAChannel**](UserApi.md#updatePushPreferencesForAChannel) | **PUT** /v3/users/{user_id}/push_preference/{channel_url} | Update push preferences for a channel |
+| [**updateSpecificUserMetadata**](UserApi.md#updateSpecificUserMetadata) | **PUT** /v3/users/{user_id}/metadata/{key} | Update specific user metadata |
+| [**updateUserMetadata**](UserApi.md#updateUserMetadata) | **PUT** /v3/users/{user_id}/metadata | Update user metadata |
 | [**viewAUser**](UserApi.md#viewAUser) | **GET** /v3/users/{user_id} | View a user |
 | [**viewCountPreferenceOfAChannel**](UserApi.md#viewCountPreferenceOfAChannel) | **GET** /v3/users/{user_id}/count_preference/{channel_url} | View count preference of a channel |
 | [**viewNumberOfChannelsWithUnreadMessages**](UserApi.md#viewNumberOfChannelsWithUnreadMessages) | **GET** /v3/users/{user_id}/unread_channel_count | View number of channels with unread messages |
 | [**viewNumberOfUnreadMessages**](UserApi.md#viewNumberOfUnreadMessages) | **GET** /v3/users/{user_id}/unread_message_count | View number of unread messages |
 | [**viewPushPreferences**](UserApi.md#viewPushPreferences) | **GET** /v3/users/{user_id}/push_preference | View push preferences |
 | [**viewPushPreferencesForAChannel**](UserApi.md#viewPushPreferencesForAChannel) | **GET** /v3/users/{user_id}/push_preference/{channel_url} | View push preferences for a channel |
+| [**viewSpecificUserMetadata**](UserApi.md#viewSpecificUserMetadata) | **GET** /v3/users/{user_id}/metadata/{key} | Get specific user metadata |
 | [**viewWhoOwnsARegistrationOrDeviceToken**](UserApi.md#viewWhoOwnsARegistrationOrDeviceToken) | **GET** /v3/push/device_tokens/{token_type}/{token} | View who owns a registration or device token |
 
 
@@ -274,6 +280,78 @@ No authorization required
 | **200** | Successful response |  -  |
 
 
+## createUserMetadata
+
+> Object createUserMetadata(userId).apiToken(apiToken).createUserMetadataRequest(createUserMetadataRequest).execute();
+
+Create user metadata
+
+## Create metadata When creating new items of the user metadata. https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-create-metadata
+
+### Example
+
+```java
+// Import classes:
+import org.sendbird.client.ApiClient;
+import org.sendbird.client.ApiException;
+import org.sendbird.client.Configuration;
+import org.sendbird.client.model.*;
+import org.sendbird.client.api.UserApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+
+        UserApi apiInstance = new UserApi(defaultClient);
+        String userId = "userId_example"; // String | (Required) 
+        String apiToken = "apiToken_example"; // String | 
+        CreateUserMetadataRequest createUserMetadataRequest = new CreateUserMetadataRequest(); // CreateUserMetadataRequest | 
+        try {
+            Object result = api.createUserMetadata(userId)
+                .apiToken(apiToken)
+                .createUserMetadataRequest(createUserMetadataRequest)
+                .execute();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling UserApi#createUserMetadata");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| (Required)  | |
+| **apiToken** | **String**|  | [optional] |
+| **createUserMetadataRequest** | [**CreateUserMetadataRequest**](CreateUserMetadataRequest.md)|  | [optional] |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+
 ## createUserToken
 
 > CreateUserTokenResponse createUserToken(userId).apiToken(apiToken).createUserTokenRequest(createUserTokenRequest).execute();
@@ -393,6 +471,148 @@ public class Example {
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#deleteAUser");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| (Required)  | |
+| **apiToken** | **String**|  | [optional] |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+
+## deleteSpecificUserMetadata
+
+> Object deleteSpecificUserMetadata(userId, key).apiToken(apiToken).execute();
+
+Delete user metadata
+
+## Delete metadata
+https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-delete-metadata
+
+### Example
+
+```java
+// Import classes:
+import org.sendbird.client.ApiClient;
+import org.sendbird.client.ApiException;
+import org.sendbird.client.Configuration;
+import org.sendbird.client.model.*;
+import org.sendbird.client.api.UserApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+
+        UserApi apiInstance = new UserApi(defaultClient);
+        String userId = "userId_example"; // String | (Required) 
+        String key = "key_example"; // String | 
+        String apiToken = "apiToken_example"; // String | 
+        try {
+            Object result = api.deleteSpecificUserMetadata(userId, key)
+                .apiToken(apiToken)
+                .execute();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling UserApi#deleteSpecificUserMetadata");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| (Required)  | |
+| **key** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+
+## deleteUserAllMetadata
+
+> Object deleteUserAllMetadata(userId).apiToken(apiToken).execute();
+
+Delete user metadata
+
+## Delete metadata You can delete a specific or all metadata of a user. Metadata stores additional user information such as their preference settings.
+https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-delete-metadata
+
+### Example
+
+```java
+// Import classes:
+import org.sendbird.client.ApiClient;
+import org.sendbird.client.ApiException;
+import org.sendbird.client.Configuration;
+import org.sendbird.client.model.*;
+import org.sendbird.client.api.UserApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+
+        UserApi apiInstance = new UserApi(defaultClient);
+        String userId = "userId_example"; // String | (Required) 
+        String apiToken = "apiToken_example"; // String | 
+        try {
+            Object result = api.deleteUserAllMetadata(userId)
+                .apiToken(apiToken)
+                .execute();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling UserApi#deleteUserAllMetadata");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1745,6 +1965,154 @@ No authorization required
 | **200** | Successful response |  -  |
 
 
+## updateSpecificUserMetadata
+
+> Object updateSpecificUserMetadata(userId, key).apiToken(apiToken).updateSpecificUserMetadataRequest(updateSpecificUserMetadataRequest).execute();
+
+Update specific user metadata
+
+## Update metadata
+https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-update-metadata
+
+### Example
+
+```java
+// Import classes:
+import org.sendbird.client.ApiClient;
+import org.sendbird.client.ApiException;
+import org.sendbird.client.Configuration;
+import org.sendbird.client.model.*;
+import org.sendbird.client.api.UserApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+
+        UserApi apiInstance = new UserApi(defaultClient);
+        String userId = "userId_example"; // String | (Required) 
+        String key = "key_example"; // String | 
+        String apiToken = "apiToken_example"; // String | 
+        UpdateSpecificUserMetadataRequest updateSpecificUserMetadataRequest = new UpdateSpecificUserMetadataRequest(); // UpdateSpecificUserMetadataRequest | 
+        try {
+            Object result = api.updateSpecificUserMetadata(userId, key)
+                .apiToken(apiToken)
+                .updateSpecificUserMetadataRequest(updateSpecificUserMetadataRequest)
+                .execute();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling UserApi#updateSpecificUserMetadata");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| (Required)  | |
+| **key** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
+| **updateSpecificUserMetadataRequest** | [**UpdateSpecificUserMetadataRequest**](UpdateSpecificUserMetadataRequest.md)|  | [optional] |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+
+## updateUserMetadata
+
+> Object updateUserMetadata(userId).apiToken(apiToken).updateUserMetadataRequest(updateUserMetadataRequest).execute();
+
+Update user metadata
+
+## Update metadata When updating existing items of the user metadata by their keys or adding new items to the metadata
+https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-update-metadata
+
+### Example
+
+```java
+// Import classes:
+import org.sendbird.client.ApiClient;
+import org.sendbird.client.ApiException;
+import org.sendbird.client.Configuration;
+import org.sendbird.client.model.*;
+import org.sendbird.client.api.UserApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+
+        UserApi apiInstance = new UserApi(defaultClient);
+        String userId = "userId_example"; // String | (Required) 
+        String apiToken = "apiToken_example"; // String | 
+        UpdateUserMetadataRequest updateUserMetadataRequest = new UpdateUserMetadataRequest(); // UpdateUserMetadataRequest | 
+        try {
+            Object result = api.updateUserMetadata(userId)
+                .apiToken(apiToken)
+                .updateUserMetadataRequest(updateUserMetadataRequest)
+                .execute();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling UserApi#updateUserMetadata");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| (Required)  | |
+| **apiToken** | **String**|  | [optional] |
+| **updateUserMetadataRequest** | [**UpdateUserMetadataRequest**](UpdateUserMetadataRequest.md)|  | [optional] |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+
 ## viewAUser
 
 > SendbirdUser viewAUser(userId).includeUnreadCount(includeUnreadCount).customTypes(customTypes).superMode(superMode).apiToken(apiToken).execute();
@@ -2211,6 +2579,78 @@ public class Example {
 ### Return type
 
 [**ViewPushPreferencesForAChannelResponse**](ViewPushPreferencesForAChannelResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+
+## viewSpecificUserMetadata
+
+> Object viewSpecificUserMetadata(userId, key).apiToken(apiToken).execute();
+
+Get specific user metadata
+
+## Get metadata
+https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-get-metadata
+
+### Example
+
+```java
+// Import classes:
+import org.sendbird.client.ApiClient;
+import org.sendbird.client.ApiException;
+import org.sendbird.client.Configuration;
+import org.sendbird.client.model.*;
+import org.sendbird.client.api.UserApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+
+        UserApi apiInstance = new UserApi(defaultClient);
+        String userId = "userId_example"; // String | (Required) 
+        String key = "key_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        try {
+            Object result = api.viewSpecificUserMetadata(userId, key)
+                .apiToken(apiToken)
+                .execute();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling UserApi#viewSpecificUserMetadata");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| (Required)  | |
+| **key** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
+
+### Return type
+
+**Object**
 
 ### Authorization
 
