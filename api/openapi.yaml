@@ -3435,6 +3435,239 @@ paths:
       tags:
       - User
       x-accepts: application/json
+  /v3/users/{user_id}/metadata:
+    delete:
+      description: |-
+        ## Delete metadata You can delete a specific or all metadata of a user. Metadata stores additional user information such as their preference settings.
+        https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-delete-metadata
+      operationId: deleteUserAllMetadata
+      parameters:
+      - description: '(Required) '
+        explode: false
+        in: path
+        name: user_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: api-token
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/emptyObjectResponse'
+          description: Successful response
+      summary: Delete user metadata
+      tags:
+      - User
+      x-accepts: application/json
+    post:
+      description: '## Create metadata When creating new items of the user metadata.
+        https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-create-metadata'
+      operationId: createUserMetadata
+      parameters:
+      - description: '(Required) '
+        explode: false
+        in: path
+        name: user_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: api-token
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/createUserMetadata_request'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/viewAUserMetadataResponse'
+          description: Successful response
+      summary: Create user metadata
+      tags:
+      - User
+      x-content-type: application/json
+      x-accepts: application/json
+    put:
+      description: |-
+        ## Update metadata When updating existing items of the user metadata by their keys or adding new items to the metadata
+        https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-update-metadata
+      operationId: updateUserMetadata
+      parameters:
+      - description: '(Required) '
+        explode: false
+        in: path
+        name: user_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: api-token
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateUserMetadata_request'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/updateUserMetadataResponse'
+          description: Successful response
+      summary: Update user metadata
+      tags:
+      - User
+      x-content-type: application/json
+      x-accepts: application/json
+  /v3/users/{user_id}/metadata/{key}:
+    delete:
+      description: |-
+        ## Delete metadata
+        https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-delete-metadata
+      operationId: deleteSpecificUserMetadata
+      parameters:
+      - description: '(Required) '
+        explode: false
+        in: path
+        name: user_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: api-token
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/emptyObjectResponse'
+          description: Successful response
+      summary: Delete user metadata
+      tags:
+      - User
+      x-accepts: application/json
+    get:
+      description: |-
+        ## Get metadata
+        https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-get-metadata
+      operationId: viewSpecificUserMetadata
+      parameters:
+      - description: '(Required) '
+        explode: false
+        in: path
+        name: user_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: api-token
+        required: false
+        schema:
+          example: "{{API_TOKEN}}"
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/viewAUserMetadataResponse'
+          description: Successful response
+      summary: Get specific user metadata
+      tags:
+      - User
+      x-accepts: application/json
+    put:
+      description: |-
+        ## Update metadata
+        https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-update-metadata
+      operationId: updateSpecificUserMetadata
+      parameters:
+      - description: '(Required) '
+        explode: false
+        in: path
+        name: user_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: api-token
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateSpecificUserMetadata_request'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/updateUserMetadataResponse'
+          description: Successful response
+      summary: Update specific user metadata
+      tags:
+      - User
+      x-content-type: application/json
+      x-accepts: application/json
   /v3/push/device_tokens/{token_type}/{token}:
     delete:
       description: "## Remove a registration or device token from an owner\n\nRemoves\
@@ -8043,6 +8276,10 @@ components:
             $ref: '#/components/schemas/SendbirdUser'
           type: array
       type: object
+    viewAUserMetadataResponse:
+      type: object
+    updateUserMetadataResponse:
+      type: object
     chooseAPushNotificationContentTemplateResponse:
       example:
         name: name
@@ -10100,6 +10337,31 @@ components:
           type: string
       required:
       - push_trigger_option
+      type: object
+    updateUserMetadata_request:
+      properties:
+        metadata:
+          nullable: true
+          type: object
+        upsert:
+          nullable: true
+          type: boolean
+      required:
+      - metadata
+      type: object
+    createUserMetadata_request:
+      properties:
+        metadata:
+          type: object
+      required:
+      - metadata
+      type: object
+    updateSpecificUserMetadata_request:
+      properties:
+        value:
+          type: string
+      required:
+      - value
       type: object
     updateCountPreferenceOfAChannel_request:
       properties:

@@ -24,6 +24,7 @@ docs/CreateAChannelMetadataResponse.md
 docs/CreateAGroupChannelRequest.md
 docs/CreateAUserRequest.md
 docs/CreateAnOpenChannelRequest.md
+docs/CreateUserMetadataRequest.md
 docs/CreateUserTokenRequest.md
 docs/CreateUserTokenResponse.md
 docs/FreezeAGroupChannelRequest.md
@@ -127,6 +128,8 @@ docs/UpdatePushPreferencesForAChannelRequest.md
 docs/UpdatePushPreferencesForAChannelResponse.md
 docs/UpdatePushPreferencesRequest.md
 docs/UpdatePushPreferencesResponse.md
+docs/UpdateSpecificUserMetadataRequest.md
+docs/UpdateUserMetadataRequest.md
 docs/UserApi.md
 docs/ViewBotByIdResponse.md
 docs/ViewBotByIdResponseBot.md
@@ -165,6 +168,7 @@ src/main/java/org/openapitools/client/model/CreateAChannelMetadataResponse.java
 src/main/java/org/openapitools/client/model/CreateAGroupChannelRequest.java
 src/main/java/org/openapitools/client/model/CreateAUserRequest.java
 src/main/java/org/openapitools/client/model/CreateAnOpenChannelRequest.java
+src/main/java/org/openapitools/client/model/CreateUserMetadataRequest.java
 src/main/java/org/openapitools/client/model/CreateUserTokenRequest.java
 src/main/java/org/openapitools/client/model/CreateUserTokenResponse.java
 src/main/java/org/openapitools/client/model/FreezeAGroupChannelRequest.java
@@ -262,6 +266,8 @@ src/main/java/org/openapitools/client/model/UpdatePushPreferencesForAChannelRequ
 src/main/java/org/openapitools/client/model/UpdatePushPreferencesForAChannelResponse.java
 src/main/java/org/openapitools/client/model/UpdatePushPreferencesRequest.java
 src/main/java/org/openapitools/client/model/UpdatePushPreferencesResponse.java
+src/main/java/org/openapitools/client/model/UpdateSpecificUserMetadataRequest.java
+src/main/java/org/openapitools/client/model/UpdateUserMetadataRequest.java
 src/main/java/org/openapitools/client/model/ViewBotByIdResponse.java
 src/main/java/org/openapitools/client/model/ViewBotByIdResponseBot.java
 src/main/java/org/openapitools/client/model/ViewCountPreferenceOfAChannelResponse.java
@@ -313,6 +319,7 @@ src/test/java/org/openapitools/client/model/CreateAChannelMetadataResponseTest.j
 src/test/java/org/openapitools/client/model/CreateAGroupChannelRequestTest.java
 src/test/java/org/openapitools/client/model/CreateAUserRequestTest.java
 src/test/java/org/openapitools/client/model/CreateAnOpenChannelRequestTest.java
+src/test/java/org/openapitools/client/model/CreateUserMetadataRequestTest.java
 src/test/java/org/openapitools/client/model/CreateUserTokenRequestTest.java
 src/test/java/org/openapitools/client/model/CreateUserTokenResponseTest.java
 src/test/java/org/openapitools/client/model/FreezeAGroupChannelRequestTest.java
@@ -410,6 +417,8 @@ src/test/java/org/openapitools/client/model/UpdatePushPreferencesForAChannelRequ
 src/test/java/org/openapitools/client/model/UpdatePushPreferencesForAChannelResponseTest.java
 src/test/java/org/openapitools/client/model/UpdatePushPreferencesRequestTest.java
 src/test/java/org/openapitools/client/model/UpdatePushPreferencesResponseTest.java
+src/test/java/org/openapitools/client/model/UpdateSpecificUserMetadataRequestTest.java
+src/test/java/org/openapitools/client/model/UpdateUserMetadataRequestTest.java
 src/test/java/org/openapitools/client/model/ViewBotByIdResponseBotTest.java
 src/test/java/org/openapitools/client/model/ViewBotByIdResponseTest.java
 src/test/java/org/openapitools/client/model/ViewCountPreferenceOfAChannelResponseTest.java

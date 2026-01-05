@@ -20,6 +20,7 @@ import org.openapitools.client.model.AddARegistrationOrDeviceTokenResponse;
 import org.openapitools.client.model.ChooseAPushNotificationContentTemplateRequest;
 import org.openapitools.client.model.ChooseAPushNotificationContentTemplateResponse;
 import org.openapitools.client.model.CreateAUserRequest;
+import org.openapitools.client.model.CreateUserMetadataRequest;
 import org.openapitools.client.model.CreateUserTokenRequest;
 import org.openapitools.client.model.CreateUserTokenResponse;
 import org.openapitools.client.model.GetChannelInvitationPreferenceResponse;
@@ -41,6 +42,8 @@ import org.openapitools.client.model.UpdatePushPreferencesForAChannelRequest;
 import org.openapitools.client.model.UpdatePushPreferencesForAChannelResponse;
 import org.openapitools.client.model.UpdatePushPreferencesRequest;
 import org.openapitools.client.model.UpdatePushPreferencesResponse;
+import org.openapitools.client.model.UpdateSpecificUserMetadataRequest;
+import org.openapitools.client.model.UpdateUserMetadataRequest;
 import org.openapitools.client.model.ViewCountPreferenceOfAChannelResponse;
 import org.openapitools.client.model.ViewNumberOfChannelsWithUnreadMessagesResponse;
 import org.openapitools.client.model.ViewNumberOfUnreadMessagesResponse;
@@ -121,6 +124,25 @@ public class UserApiTest {
     }
 
     /**
+     * Create user metadata
+     *
+     * ## Create metadata When creating new items of the user metadata. https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-create-metadata
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void createUserMetadataTest() throws ApiException {
+        //String userId = null;
+        //String apiToken = null;
+        //CreateUserMetadataRequest createUserMetadataRequest = null;
+        //Object response = api.createUserMetadata(userId)
+        //        .apiToken(apiToken)
+        //        .createUserMetadataRequest(createUserMetadataRequest)
+        //        .execute();
+        // TODO: test validations
+    }
+
+    /**
      * Create user token
      *
      * ## Create user token  This action issues a session token for user authentication. Session tokens provide an efficient stateless authentication method by not storing the tokens in the Sendbird database, and thus improving the server&#39;s performance. See [access token vs. session token](https://sendbird.com/docs/chat/platform-api/v3/user/creating-users/create-a-user#2-access-token-vs-session-token) to learn more about authenticating users.  &gt; **Note**: The endpoint &#x60;/users/{user_id}&#x60; is deprecated. Use &#x60;/users/{user_id}/token&#x60; for greater efficiency.      https://sendbird.com/docs/chat/platform-api/v3/user/managing-session-tokens/issue-a-session-token#1-issue-a-session-token
@@ -151,6 +173,41 @@ public class UserApiTest {
         //String userId = null;
         //String apiToken = null;
         //Object response = api.deleteAUser(userId)
+        //        .apiToken(apiToken)
+        //        .execute();
+        // TODO: test validations
+    }
+
+    /**
+     * Delete user metadata
+     *
+     * ## Delete metadata https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-delete-metadata
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void deleteSpecificUserMetadataTest() throws ApiException {
+        //String userId = null;
+        //String key = null;
+        //String apiToken = null;
+        //Object response = api.deleteSpecificUserMetadata(userId, key)
+        //        .apiToken(apiToken)
+        //        .execute();
+        // TODO: test validations
+    }
+
+    /**
+     * Delete user metadata
+     *
+     * ## Delete metadata You can delete a specific or all metadata of a user. Metadata stores additional user information such as their preference settings. https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-delete-metadata
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void deleteUserAllMetadataTest() throws ApiException {
+        //String userId = null;
+        //String apiToken = null;
+        //Object response = api.deleteUserAllMetadata(userId)
         //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations
@@ -533,6 +590,45 @@ public class UserApiTest {
     }
 
     /**
+     * Update specific user metadata
+     *
+     * ## Update metadata https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-update-metadata
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void updateSpecificUserMetadataTest() throws ApiException {
+        //String userId = null;
+        //String key = null;
+        //String apiToken = null;
+        //UpdateSpecificUserMetadataRequest updateSpecificUserMetadataRequest = null;
+        //Object response = api.updateSpecificUserMetadata(userId, key)
+        //        .apiToken(apiToken)
+        //        .updateSpecificUserMetadataRequest(updateSpecificUserMetadataRequest)
+        //        .execute();
+        // TODO: test validations
+    }
+
+    /**
+     * Update user metadata
+     *
+     * ## Update metadata When updating existing items of the user metadata by their keys or adding new items to the metadata https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-update-metadata
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void updateUserMetadataTest() throws ApiException {
+        //String userId = null;
+        //String apiToken = null;
+        //UpdateUserMetadataRequest updateUserMetadataRequest = null;
+        //Object response = api.updateUserMetadata(userId)
+        //        .apiToken(apiToken)
+        //        .updateUserMetadataRequest(updateUserMetadataRequest)
+        //        .execute();
+        // TODO: test validations
+    }
+
+    /**
      * View a user
      *
      * ## View a user  You can retrieve information about a user using this API.  https://sendbird.com/docs/chat/platform-api/v3/user/listing-users/get-a-user#1-get-a-user  &#x60;user_id&#x60;   Type: string   Description: Specifies the unique ID of the user to retrieve.
@@ -645,6 +741,24 @@ public class UserApiTest {
         //String channelUrl = null;
         //String apiToken = null;
         //ViewPushPreferencesForAChannelResponse response = api.viewPushPreferencesForAChannel(userId, channelUrl)
+        //        .apiToken(apiToken)
+        //        .execute();
+        // TODO: test validations
+    }
+
+    /**
+     * Get specific user metadata
+     *
+     * ## Get metadata https://sendbird.com/docs/chat/platform-api/v3/user/managing-metadata/user-get-metadata
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void viewSpecificUserMetadataTest() throws ApiException {
+        //String userId = null;
+        //String key = null;
+        //String apiToken = null;
+        //Object response = api.viewSpecificUserMetadata(userId, key)
         //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations

@@ -35,7 +35,7 @@ import org.sendbird.client.JSON;
   UpdateChannelInvitationPreferenceResponse.JSON_PROPERTY_AUTO_ACCEPT
 })
 @JsonTypeName("updateChannelInvitationPreferenceResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-05T16:00:24.119682+09:00[Asia/Seoul]")
 public class UpdateChannelInvitationPreferenceResponse {
   public static final String JSON_PROPERTY_AUTO_ACCEPT = "auto_accept";
   private Boolean autoAccept;

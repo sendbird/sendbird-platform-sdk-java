@@ -42,7 +42,7 @@ import org.sendbird.client.JSON;
   ListBotsResponseBotsInnerBot.JSON_PROPERTY_BOT_USERID
 })
 @JsonTypeName("listBotsResponse_bots_inner_bot")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-05T16:00:24.119682+09:00[Asia/Seoul]")
 public class ListBotsResponseBotsInnerBot {
   public static final String JSON_PROPERTY_AI_AGENT_TYPE = "ai_agent_type";
   private String aiAgentType;
