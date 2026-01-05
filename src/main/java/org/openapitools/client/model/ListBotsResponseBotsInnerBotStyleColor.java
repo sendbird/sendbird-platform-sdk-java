@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   ListBotsResponseBotsInnerBotStyleColor.JSON_PROPERTY_THEME
 })
 @JsonTypeName("listBotsResponse_bots_inner_bot_style_color")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-30T12:02:06.082955+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-05T15:56:19.361171+09:00[Asia/Seoul]")
 public class ListBotsResponseBotsInnerBotStyleColor {
   public static final String JSON_PROPERTY_ACCENT_COLOR = "accent_color";
   private String accentColor;

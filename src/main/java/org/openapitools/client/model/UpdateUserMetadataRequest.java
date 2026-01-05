@@ -40,7 +40,7 @@ import org.sendbird.client.JSON;
   UpdateUserMetadataRequest.JSON_PROPERTY_UPSERT
 })
 @JsonTypeName("updateUserMetadata_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-30T12:02:06.082955+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-05T15:56:19.361171+09:00[Asia/Seoul]")
 public class UpdateUserMetadataRequest {
   public static final String JSON_PROPERTY_METADATA = "metadata";
   private Object metadata;

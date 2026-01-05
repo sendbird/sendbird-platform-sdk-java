@@ -301,6 +301,3 @@ src/main/java/org/sendbird/client/auth/ApiKeyAuth.java
 src/main/java/org/sendbird/client/auth/Authentication.java
 src/main/java/org/sendbird/client/auth/HttpBasicAuth.java
 src/main/java/org/sendbird/client/auth/HttpBearerAuth.java
-src/test/java/org/openapitools/client/model/CreateUserMetadataRequestTest.java
-src/test/java/org/openapitools/client/model/UpdateSpecificUserMetadataRequestTest.java
-src/test/java/org/openapitools/client/model/UpdateUserMetadataRequestTest.java

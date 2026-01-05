@@ -40,7 +40,7 @@ import org.sendbird.client.JSON;
   GroupChatListChannelsResponse.JSON_PROPERTY_TS
 })
 @JsonTypeName("groupChatListChannelsResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-30T12:02:06.082955+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-05T15:56:19.361171+09:00[Asia/Seoul]")
 public class GroupChatListChannelsResponse {
   public static final String JSON_PROPERTY_CHANNELS = "channels";
   private List<SendbirdGroupChannel> channels = null;
