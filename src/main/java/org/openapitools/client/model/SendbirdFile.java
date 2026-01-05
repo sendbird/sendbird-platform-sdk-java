@@ -42,7 +42,7 @@ import org.sendbird.client.JSON;
   SendbirdFile.JSON_PROPERTY_THUMBNAILS,
   SendbirdFile.JSON_PROPERTY_REQUIRE_AUTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-05T15:56:19.361171+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-05T16:00:24.119682+09:00[Asia/Seoul]")
 public class SendbirdFile {
   public static final String JSON_PROPERTY_URL = "url";
   private String url;

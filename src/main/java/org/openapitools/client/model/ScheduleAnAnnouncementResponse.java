@@ -61,7 +61,7 @@ import org.sendbird.client.JSON;
   ScheduleAnAnnouncementResponse.JSON_PROPERTY_UNIQUE_ID
 })
 @JsonTypeName("scheduleAnAnnouncementResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-05T15:56:19.361171+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-05T16:00:24.119682+09:00[Asia/Seoul]")
 public class ScheduleAnAnnouncementResponse {
   public static final String JSON_PROPERTY_ANNOUNCEMENT_GROUP = "announcement_group";
   private String announcementGroup;

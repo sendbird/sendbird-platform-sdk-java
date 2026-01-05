@@ -35,7 +35,7 @@ import org.sendbird.client.JSON;
   ChooseAPushNotificationContentTemplateRequest.JSON_PROPERTY_NAME
 })
 @JsonTypeName("chooseAPushNotificationContentTemplate_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-05T15:56:19.361171+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-05T16:00:24.119682+09:00[Asia/Seoul]")
 public class ChooseAPushNotificationContentTemplateRequest {
   /**
    * Specifies the name of a template used for notifications. Acceptable values are default and alternative. (Default: default)

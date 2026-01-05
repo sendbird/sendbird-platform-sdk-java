@@ -50,7 +50,7 @@ import org.sendbird.client.JSON;
   UpdateAUserRequest.JSON_PROPERTY_PROFILE_URL
 })
 @JsonTypeName("updateAUser_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-05T15:56:19.361171+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-05T16:00:24.119682+09:00[Asia/Seoul]")
 public class UpdateAUserRequest {
   public static final String JSON_PROPERTY_DISCOVERY_KEYS = "discovery_keys";
   private JsonNullable<List<String>> discoveryKeys = JsonNullable.<List<String>>undefined();

@@ -66,7 +66,7 @@ import org.sendbird.client.JSON;
   SendAMessageRequest.JSON_PROPERTY_VOLUME
 })
 @JsonTypeName("sendAMessage_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-05T15:56:19.361171+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-05T16:00:24.119682+09:00[Asia/Seoul]")
 public class SendAMessageRequest {
   /**
    * Gets or Sets messageType
