@@ -16,6 +16,11 @@ hs_err_pid*
 
 # build files
 **/target
-target
+target/**
 .gradle
 build
+
+# Allow target directory itself (needed for ! patterns to work)
+!target/
+# Allow only jar files in target directory (build artifacts)
+!target/*.jar
