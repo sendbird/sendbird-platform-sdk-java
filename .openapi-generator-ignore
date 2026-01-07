@@ -22,3 +22,6 @@
 # Then explicitly reverse the ignore rule for a single file:
 #!docs/README.md
 README.md
+.gitignore
+.github/**
+src/test/java/org/sendbird/client/e2e/**

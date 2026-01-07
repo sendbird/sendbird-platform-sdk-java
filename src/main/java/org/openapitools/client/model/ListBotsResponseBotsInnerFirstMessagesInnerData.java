@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   ListBotsResponseBotsInnerFirstMessagesInnerData.JSON_PROPERTY_SUGGESTED_REPLIES
 })
 @JsonTypeName("listBotsResponse_bots_inner_first_messages_inner_data")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-05T16:00:24.119682+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-07T12:17:09.099818+09:00[Asia/Seoul]")
 public class ListBotsResponseBotsInnerFirstMessagesInnerData {
   public static final String JSON_PROPERTY_SUGGESTED_REPLIES = "suggested_replies";
   private List<String> suggestedReplies = null;

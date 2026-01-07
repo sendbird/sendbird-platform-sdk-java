@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   UpdatePushPreferencesForAChannelResponse.JSON_PROPERTY_PUSH_TRIGGER_OPTION
 })
 @JsonTypeName("updatePushPreferencesForAChannelResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-05T16:00:24.119682+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-07T12:17:09.099818+09:00[Asia/Seoul]")
 public class UpdatePushPreferencesForAChannelResponse {
   public static final String JSON_PROPERTY_ENABLE = "enable";
   private Boolean enable;

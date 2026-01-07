@@ -66,7 +66,7 @@ import org.sendbird.client.auth.ApiKeyAuth;
 /**
  * <p>ApiClient class.</p>
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-05T16:00:24.119682+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-07T12:17:09.099818+09:00[Asia/Seoul]")
 public class ApiClient extends JavaTimeFormatter {
   protected Map<String, String> defaultHeaderMap = new HashMap<String, String>();
   protected Map<String, String> defaultCookieMap = new HashMap<String, String>();
@@ -127,7 +127,7 @@ public class ApiClient extends JavaTimeFormatter {
     this.dateFormat = new RFC3339DateFormat();
 
     // Set default User-Agent.
-    setUserAgent("OpenAPI-Generator/2.1.2/java");
+    setUserAgent("OpenAPI-Generator/2.1.3/java");
 
     // Setup authentications (key: authentication name, value: authentication).
     authentications = new HashMap<String, Authentication>();
@@ -779,13 +779,23 @@ public class ApiClient extends JavaTimeFormatter {
         if (obj instanceof String) {
           entity = Entity.entity(obj == null ? "null" : "\"" + ((String)obj).replaceAll("\"", Matcher.quoteReplacement("\\\"")) + "\"", contentType);
         } else {
-          entity = Entity.entity(obj == null ? "null" : obj, contentType);
+          try {
+            String jsonString = obj == null ? "null" : json.getMapper().writeValueAsString(obj);
+            entity = Entity.entity(jsonString, contentType);
+          } catch (Exception e) {
+            throw new ApiException("Failed to serialize object: " + e.toString());
+          }
         }
       } else {
         if (obj instanceof String) {
           entity = Entity.entity(obj == null ? "" : "\"" + ((String)obj).replaceAll("\"", Matcher.quoteReplacement("\\\"")) + "\"", contentType);
         } else {
-          entity = Entity.entity(obj == null ? "" : obj, contentType);
+          try {
+            String jsonString = obj == null ? "" : json.getMapper().writeValueAsString(obj);
+            entity = Entity.entity(jsonString, contentType);
+          } catch (Exception e) {
+            throw new ApiException("Failed to serialize object: " + e.toString());
+          }
         }
       }
     }
