@@ -92,7 +92,7 @@ import org.sendbird.client.JSON;
   SendbirdGroupChannel.JSON_PROPERTY_UNREAD_MESSAGE_COUNT,
   SendbirdGroupChannel.JSON_PROPERTY_USER_LAST_READ
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-05T16:00:24.119682+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-07T12:17:09.099818+09:00[Asia/Seoul]")
 public class SendbirdGroupChannel {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;

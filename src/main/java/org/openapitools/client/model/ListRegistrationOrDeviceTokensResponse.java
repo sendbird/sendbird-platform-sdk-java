@@ -41,7 +41,7 @@ import org.sendbird.client.JSON;
   ListRegistrationOrDeviceTokensResponse.JSON_PROPERTY_USER
 })
 @JsonTypeName("listRegistrationOrDeviceTokensResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-05T16:00:24.119682+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-07T12:17:09.099818+09:00[Asia/Seoul]")
 public class ListRegistrationOrDeviceTokensResponse {
   public static final String JSON_PROPERTY_TOKEN = "token";
   private List<String> token = null;
