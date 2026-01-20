@@ -33,25 +33,33 @@ jobs:
     steps:
       - name: Resolve inputs
         id: resolve
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          RELEASE_TAG_NAME: ${{ github.event.release.tag_name }}
+          INPUT_REF: ${{ inputs.ref }}
+          INPUT_TAG_NAME: ${{ inputs.tag_name }}
+          INPUT_CLOUDSMITH_REPO: ${{ inputs.cloudsmith_repo }}
+          DEFAULT_CLOUDSMITH_REPO: ${{ vars.CLOUDSMITH_REPO }}
+          CLOUDSMITH_OWNER: ${{ vars.CLOUDSMITH_OWNER }}
         run: |
           set -euo pipefail
 
-          if [ "${{ github.event_name }}" = "release" ]; then
-            echo "ref=${{ github.event.release.tag_name }}" >> "$GITHUB_OUTPUT"
-            echo "tag_name=${{ github.event.release.tag_name }}" >> "$GITHUB_OUTPUT"
+          if [ "$EVENT_NAME" = "release" ]; then
+            echo "ref=$RELEASE_TAG_NAME" >> "$GITHUB_OUTPUT"
+            echo "tag_name=$RELEASE_TAG_NAME" >> "$GITHUB_OUTPUT"
           else
-            echo "ref=${{ inputs.ref }}" >> "$GITHUB_OUTPUT"
-            echo "tag_name=${{ inputs.tag_name }}" >> "$GITHUB_OUTPUT"
+            echo "ref=$INPUT_REF" >> "$GITHUB_OUTPUT"
+            echo "tag_name=$INPUT_TAG_NAME" >> "$GITHUB_OUTPUT"
           fi
 
-          if [ -n "${{ inputs.cloudsmith_repo }}" ]; then
-            echo "cloudsmith_repo=${{ inputs.cloudsmith_repo }}" >> "$GITHUB_OUTPUT"
+          if [ -n "$INPUT_CLOUDSMITH_REPO" ]; then
+            echo "cloudsmith_repo=$INPUT_CLOUDSMITH_REPO" >> "$GITHUB_OUTPUT"
           else
-            echo "cloudsmith_repo=${{ vars.CLOUDSMITH_REPO }}" >> "$GITHUB_OUTPUT"
+            echo "cloudsmith_repo=$DEFAULT_CLOUDSMITH_REPO" >> "$GITHUB_OUTPUT"
           fi
 
-          echo "cloudsmith_owner=${{ vars.CLOUDSMITH_OWNER }}" >> "$GITHUB_OUTPUT"
-
+          echo "cloudsmith_owner=$CLOUDSMITH_OWNER" >> "$GITHUB_OUTPUT"
+          
       - name: Checkout
         uses: actions/checkout@v4
         with:
