@@ -1,0 +1,148 @@
+name: Publish Maven package to Cloudsmith (API)
+
+on:
+  release:
+    types: [published]
+
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: "Git ref to build (branch, tag, or SHA). For PR test, use the PR branch name or commit SHA."
+        required: true
+        type: string
+      tag_name:
+        description: "Tag name for version validation (e.g., 1.1.0 or v1.1.0). Must match pom.xml project.version."
+        required: true
+        type: string
+      cloudsmith_repo:
+        description: "Cloudsmith REPO slug (use test repo for PR validation). Leave empty to use repo variable."
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    name: Build and Upload to Cloudsmith
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: ["8"]
+
+    steps:
+      - name: Resolve inputs
+        id: resolve
+        run: |
+          set -euo pipefail
+
+          if [ "${{ github.event_name }}" = "release" ]; then
+            echo "ref=${{ github.event.release.tag_name }}" >> "$GITHUB_OUTPUT"
+            echo "tag_name=${{ github.event.release.tag_name }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "ref=${{ inputs.ref }}" >> "$GITHUB_OUTPUT"
+            echo "tag_name=${{ inputs.tag_name }}" >> "$GITHUB_OUTPUT"
+          fi
+
+          if [ -n "${{ inputs.cloudsmith_repo }}" ]; then
+            echo "cloudsmith_repo=${{ inputs.cloudsmith_repo }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "cloudsmith_repo=${{ vars.CLOUDSMITH_REPO }}" >> "$GITHUB_OUTPUT"
+          fi
+
+          echo "cloudsmith_owner=${{ vars.CLOUDSMITH_OWNER }}" >> "$GITHUB_OUTPUT"
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.resolve.outputs.ref }}
+          fetch-depth: 0
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ matrix.java }}
+          distribution: "temurin"
+          cache: maven
+
+      - name: Validate tag version matches pom version
+        run: |
+          set -euo pipefail
+
+          TAG_NAME="${{ steps.resolve.outputs.tag_name }}"
+          TAG_VERSION="${TAG_NAME#v}"
+
+          echo "Tag: ${TAG_NAME}"
+          echo "Tag version: ${TAG_VERSION}"
+
+          POM_VERSION="$(mvn -q -DforceStdout help:evaluate -Dexpression=project.version 2>/dev/null || true)"
+          if [ -z "${POM_VERSION}" ]; then
+            echo "Failed to read project.version from pom.xml"
+            exit 1
+          fi
+
+          echo "POM version: ${POM_VERSION}"
+
+          if [ "${TAG_VERSION}" != "${POM_VERSION}" ]; then
+            echo "Version mismatch: tag(${TAG_VERSION}) != pom(${POM_VERSION})"
+            exit 1
+          fi
+
+      - name: Build with Maven
+        run: mvn -B package --no-transfer-progress --file pom.xml
+
+      - name: Validate build artifacts exist
+        run: |
+          set -euo pipefail
+
+          echo "== target contents =="
+          ls -al target || true
+
+          MAIN_JAR="$(ls -1 target/*.jar | grep -vE '(-javadoc|-sources|-tests)\.jar$' | head -n 1 || true)"
+          JAVADOC_JAR="$(ls -1 target/*-javadoc.jar | head -n 1 || true)"
+          SOURCES_JAR="$(ls -1 target/*-sources.jar | head -n 1 || true)"
+          TESTS_JAR="$(ls -1 target/*-tests.jar | head -n 1 || true)"
+
+          echo "MAIN_JAR=${MAIN_JAR}"
+          echo "JAVADOC_JAR=${JAVADOC_JAR}"
+          echo "SOURCES_JAR=${SOURCES_JAR}"
+          echo "TESTS_JAR=${TESTS_JAR}"
+
+          if [ -z "${MAIN_JAR}" ] || [ -z "${JAVADOC_JAR}" ] || [ -z "${SOURCES_JAR}" ] || [ -z "${TESTS_JAR}" ]; then
+            echo "Expected 4 jars not found. Ensure build produces:"
+            echo "  main jar, *-javadoc.jar, *-sources.jar, *-tests.jar"
+            exit 1
+          fi
+
+          if [ ! -f "pom.xml" ]; then
+            echo "pom.xml not found at repo root."
+            exit 1
+          fi
+
+      - name: Upload to Cloudsmith Maven via API
+        env:
+          CLOUDSMITH_API_KEY: ${{ secrets.CLOUDSMITH_API_KEY }}
+        run: |
+          set -euo pipefail
+
+          OWNER="${{ steps.resolve.outputs.cloudsmith_owner }}"
+          REPO="${{ steps.resolve.outputs.cloudsmith_repo }}"
+
+          MAIN_JAR="$(ls -1 target/*.jar | grep -vE '(-javadoc|-sources|-tests)\.jar$' | head -n 1)"
+          JAVADOC_JAR="$(ls -1 target/*-javadoc.jar | head -n 1)"
+          SOURCES_JAR="$(ls -1 target/*-sources.jar | head -n 1)"
+          TESTS_JAR="$(ls -1 target/*-tests.jar | head -n 1)"
+          POM_FILE="pom.xml"
+
+          UPLOAD_URL="https://api.cloudsmith.io/v1/packages/${OWNER}/${REPO}/upload/maven/"
+
+          echo "Uploading to: ${UPLOAD_URL}"
+
+          curl -fsS -X POST \
+            -H "Authorization: Bearer ${CLOUDSMITH_API_KEY}" \
+            -F "package_file=@${MAIN_JAR}" \
+            -F "pom_file=@${POM_FILE}" \
+            -F "javadoc_file=@${JAVADOC_JAR}" \
+            -F "sources_file=@${SOURCES_JAR}" \
+            -F "tests_file=@${TESTS_JAR}" \
+            "${UPLOAD_URL}"
