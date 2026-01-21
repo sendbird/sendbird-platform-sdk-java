@@ -59,7 +59,7 @@ jobs:
           fi
 
           echo "cloudsmith_owner=$CLOUDSMITH_OWNER" >> "$GITHUB_OUTPUT"
-          
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -145,12 +145,30 @@ jobs:
           UPLOAD_URL="https://api.cloudsmith.io/v1/packages/${OWNER}/${REPO}/upload/maven/"
 
           echo "Uploading to: ${UPLOAD_URL}"
+          echo "MAIN_JAR=${MAIN_JAR}"
+          echo "JAVADOC_JAR=${JAVADOC_JAR}"
+          echo "SOURCES_JAR=${SOURCES_JAR}"
+          echo "TESTS_JAR=${TESTS_JAR}"
+          echo "POM_FILE=${POM_FILE}"
 
-          curl -fsS -X POST \
-            -H "Authorization: Bearer ${CLOUDSMITH_API_KEY}" \
-            -F "package_file=@${MAIN_JAR}" \
-            -F "pom_file=@${POM_FILE}" \
-            -F "javadoc_file=@${JAVADOC_JAR}" \
-            -F "sources_file=@${SOURCES_JAR}" \
-            -F "tests_file=@${TESTS_JAR}" \
-            "${UPLOAD_URL}"
+          # Upload and capture response
+          HTTP_CODE="$(
+            curl -sS -o /tmp/cloudsmith_resp.json -w "%{http_code}" -X POST \
+              -H "Authorization: Bearer ${CLOUDSMITH_API_KEY}" \
+              -F "package_file=@${MAIN_JAR}" \
+              -F "pom_file=@${POM_FILE}" \
+              -F "javadoc_file=@${JAVADOC_JAR}" \
+              -F "sources_file=@${SOURCES_JAR}" \
+              -F "tests_file=@${TESTS_JAR}" \
+              "${UPLOAD_URL}"
+          )"
+
+          echo "HTTP_CODE=${HTTP_CODE}"
+          echo "Response body:"
+          cat /tmp/cloudsmith_resp.json || true
+
+          if [ "${HTTP_CODE}" -lt 200 ] || [ "${HTTP_CODE}" -ge 300 ]; then
+            echo "Upload failed with status ${HTTP_CODE}"
+            exit 1
+          fi
+          
