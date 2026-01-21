@@ -127,7 +127,14 @@ jobs:
             exit 1
           fi
 
-      - name: Upload to Cloudsmith Maven via API
+      - name: Install Cloudsmith CLI
+        run: |
+          set -euo pipefail
+          python3 -m pip install --upgrade pip
+          python3 -m pip install "cloudsmith-cli>=1.7.0"
+          cloudsmith --version
+
+      - name: Upload to Cloudsmith Maven via CLI
         env:
           CLOUDSMITH_API_KEY: ${{ secrets.CLOUDSMITH_API_KEY }}
         run: |
@@ -135,6 +142,7 @@ jobs:
 
           OWNER="${{ steps.resolve.outputs.cloudsmith_owner }}"
           REPO="${{ steps.resolve.outputs.cloudsmith_repo }}"
+          TARGET="${OWNER}/${REPO}"
 
           MAIN_JAR="$(ls -1 target/*.jar | grep -vE '(-javadoc|-sources|-tests)\.jar$' | head -n 1)"
           JAVADOC_JAR="$(ls -1 target/*-javadoc.jar | head -n 1)"
@@ -142,33 +150,35 @@ jobs:
           TESTS_JAR="$(ls -1 target/*-tests.jar | head -n 1)"
           POM_FILE="pom.xml"
 
-          UPLOAD_URL="https://api.cloudsmith.io/v1/packages/${OWNER}/${REPO}/upload/maven/"
-
-          echo "Uploading to: ${UPLOAD_URL}"
+          echo "=== Cloudsmith upload target ==="
+          echo "TARGET=${TARGET}"
           echo "MAIN_JAR=${MAIN_JAR}"
           echo "JAVADOC_JAR=${JAVADOC_JAR}"
           echo "SOURCES_JAR=${SOURCES_JAR}"
           echo "TESTS_JAR=${TESTS_JAR}"
           echo "POM_FILE=${POM_FILE}"
+          echo "================================"
 
-          # Upload and capture response
-          HTTP_CODE="$(
-            curl -sS -o /tmp/cloudsmith_resp.json -w "%{http_code}" -X POST \
-              -H "Authorization: Bearer ${CLOUDSMITH_API_KEY}" \
-              -F "package_file=@${MAIN_JAR}" \
-              -F "pom_file=@${POM_FILE}" \
-              -F "javadoc_file=@${JAVADOC_JAR}" \
-              -F "sources_file=@${SOURCES_JAR}" \
-              -F "tests_file=@${TESTS_JAR}" \
-              "${UPLOAD_URL}"
-          )"
+          # Run upload and capture stdout/stderr
+          set +e
+          cloudsmith push maven "${TARGET}" "${MAIN_JAR}" \
+            --pom-file "${POM_FILE}" \
+            --javadoc-file "${JAVADOC_JAR}" \
+            --sources-file "${SOURCES_JAR}" \
+            --extra-files "${TESTS_JAR}" \
+            > /tmp/cloudsmith_stdout.log 2> /tmp/cloudsmith_stderr.log
+          EXIT_CODE=$?
+          set -e
 
-          echo "HTTP_CODE=${HTTP_CODE}"
-          echo "Response body:"
-          cat /tmp/cloudsmith_resp.json || true
+          echo "=== Cloudsmith CLI stdout ==="
+          cat /tmp/cloudsmith_stdout.log || true
+          echo "=== Cloudsmith CLI stderr ==="
+          cat /tmp/cloudsmith_stderr.log || true
+          echo "=============================="
 
-          if [ "${HTTP_CODE}" -lt 200 ] || [ "${HTTP_CODE}" -ge 300 ]; then
-            echo "Upload failed with status ${HTTP_CODE}"
-            exit 1
+          if [ "${EXIT_CODE}" -ne 0 ]; then
+            echo "Cloudsmith upload failed (exit code=${EXIT_CODE})"
+            exit "${EXIT_CODE}"
           fi
-          
+
+          echo "Cloudsmith upload succeeded"
