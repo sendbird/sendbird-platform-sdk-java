@@ -6,10 +6,12 @@
 name: Java CI with Maven
 
 on:
-  push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
+  # disable this workflow(publish-cloudsmith will be used)
+  # push:
+  #   branches: [ main, master ]
+  # pull_request:
+  #   branches: [ main, master ]
+  workflow_call:
 
 jobs:
   build:
