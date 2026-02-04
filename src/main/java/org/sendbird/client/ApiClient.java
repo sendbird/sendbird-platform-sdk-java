@@ -22,6 +22,9 @@ import org.glassfish.jersey.media.multipart.MultiPartFeature;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.nio.charset.StandardCharsets;
 
 import java.net.URI;
 import javax.net.ssl.SSLContext;
@@ -66,7 +69,7 @@ import org.sendbird.client.auth.ApiKeyAuth;
 /**
  * <p>ApiClient class.</p>
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-07T12:17:09.099818+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-04T13:37:30.293265+09:00[Asia/Seoul]")
 public class ApiClient extends JavaTimeFormatter {
   protected Map<String, String> defaultHeaderMap = new HashMap<String, String>();
   protected Map<String, String> defaultCookieMap = new HashMap<String, String>();
@@ -127,7 +130,7 @@ public class ApiClient extends JavaTimeFormatter {
     this.dateFormat = new RFC3339DateFormat();
 
     // Set default User-Agent.
-    setUserAgent("OpenAPI-Generator/2.1.3/java");
+    setUserAgent("OpenAPI-Generator/2.1.4/java");
 
     // Setup authentications (key: authentication name, value: authentication).
     authentications = new HashMap<String, Authentication>();
@@ -872,7 +875,60 @@ public class ApiClient extends JavaTimeFormatter {
     // read the entity stream multiple times
     response.bufferEntity();
 
-    return response.readEntity(returnType);
+    try {
+      // Try to use JAX-RS message body reader first (works with Jersey)
+      return response.readEntity(returnType);
+    } catch (javax.ws.rs.client.ResponseProcessingException e) {
+      // Fallback for CXF or other JAX-RS implementations that don't have proper message body readers
+      // This happens when Apache CXF is in the classpath and interferes with Jersey
+      if (e.getMessage() != null && e.getMessage().contains("No message body reader")) {
+        log.warning("JAX-RS message body reader not found, falling back to manual JSON deserialization. " +
+                    "This may occur when Apache CXF is present in the classpath. Error: " + e.getMessage());
+        try {
+          // Manually read and deserialize JSON using ObjectMapper
+          // Since bufferEntity() was called, we can try to read as String first
+          String jsonString = null;
+          try {
+            jsonString = response.readEntity(String.class);
+          } catch (Exception stringReadException) {
+            // If reading as String fails, try InputStream
+            try {
+              InputStream entityStream = response.readEntity(InputStream.class);
+              if (entityStream != null) {
+                // Read the entire stream into a string
+                StringBuilder jsonStringBuilder = new StringBuilder();
+                try (BufferedReader reader = new BufferedReader(
+                        new InputStreamReader(entityStream, StandardCharsets.UTF_8))) {
+                  String line;
+                  while ((line = reader.readLine()) != null) {
+                    jsonStringBuilder.append(line);
+                  }
+                }
+                jsonString = jsonStringBuilder.toString();
+              }
+            } catch (Exception streamReadException) {
+              throw new ApiException("Failed to read response entity as both String and InputStream: " + 
+                                    streamReadException.getMessage(), e, 0, null, null);
+            }
+          }
+          
+          if (jsonString == null || jsonString.isEmpty()) {
+            return null;
+          }
+          
+          // Use ObjectMapper to deserialize
+          return json.getMapper().readValue(jsonString, json.getMapper().constructType(returnType.getType()));
+        } catch (com.fasterxml.jackson.core.JsonProcessingException jsonException) {
+          throw new ApiException("Failed to deserialize JSON response: " + jsonException.getMessage(), e, 0, null, null);
+        } catch (Exception fallbackException) {
+          throw new ApiException("Failed to deserialize response: " + fallbackException.getMessage(), e, 0, null, null);
+        }
+      } else {
+        throw new ApiException("Failed to deserialize response: " + e.getMessage(), e, 0, null, null);
+      }
+    } catch (Exception e) {
+      throw new ApiException("Failed to deserialize response: " + e.getMessage(), e, 0, null, null);
+    }
   }
 
   /**

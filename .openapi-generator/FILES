@@ -1,4 +1,3 @@
-.github/workflows/maven.yml
 .travis.yml
 api/openapi.yaml
 build.gradle
