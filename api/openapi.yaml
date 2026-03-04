@@ -8352,6 +8352,27 @@ components:
         enable_push_for_replies: true
         start_min: 2
         snooze_end_ts: 1
+        dnd_schedules:
+        - time_windows:
+          - end_min: 2
+            start_hour: 7
+            end_hour: 3
+            start_min: 9
+          - end_min: 2
+            start_hour: 7
+            end_hour: 3
+            start_min: 9
+          day_of_week: monday
+        - time_windows:
+          - end_min: 2
+            start_hour: 7
+            end_hour: 3
+            start_min: 9
+          - end_min: 2
+            start_hour: 7
+            end_hour: 3
+            start_min: 9
+          day_of_week: monday
         snooze_enabled: true
         end_min: 6
         push_sound: push_sound
@@ -8393,6 +8414,10 @@ components:
           type: integer
         timezone:
           type: string
+        dnd_schedules:
+          items:
+            $ref: '#/components/schemas/updatePushPreferences_request_dnd_schedules_inner'
+          type: array
       type: object
     updatePushPreferencesResponse:
       example:
@@ -8404,6 +8429,27 @@ components:
         enable_push_for_replies: true
         start_min: 2
         snooze_end_ts: 1
+        dnd_schedules:
+        - time_windows:
+          - end_min: 2
+            start_hour: 7
+            end_hour: 3
+            start_min: 9
+          - end_min: 2
+            start_hour: 7
+            end_hour: 3
+            start_min: 9
+          day_of_week: monday
+        - time_windows:
+          - end_min: 2
+            start_hour: 7
+            end_hour: 3
+            start_min: 9
+          - end_min: 2
+            start_hour: 7
+            end_hour: 3
+            start_min: 9
+          day_of_week: monday
         snooze_enabled: true
         end_min: 6
         push_sound: push_sound
@@ -8445,6 +8491,10 @@ components:
           type: integer
         timezone:
           type: string
+        dnd_schedules:
+          items:
+            $ref: '#/components/schemas/updatePushPreferences_request_dnd_schedules_inner'
+          type: array
       type: object
     removeAllRegistrationOrDeviceTokenResponse:
       example:
@@ -10276,6 +10326,50 @@ components:
         huawei_device_token:
           type: string
       type: object
+    updatePushPreferences_request_dnd_schedules_inner_time_windows_inner:
+      example:
+        end_min: 2
+        start_hour: 7
+        end_hour: 3
+        start_min: 9
+      properties:
+        start_hour:
+          type: integer
+        start_min:
+          type: integer
+        end_hour:
+          type: integer
+        end_min:
+          type: integer
+      type: object
+    updatePushPreferences_request_dnd_schedules_inner:
+      example:
+        time_windows:
+        - end_min: 2
+          start_hour: 7
+          end_hour: 3
+          start_min: 9
+        - end_min: 2
+          start_hour: 7
+          end_hour: 3
+          start_min: 9
+        day_of_week: monday
+      properties:
+        day_of_week:
+          enum:
+          - monday
+          - tuesday
+          - wednesday
+          - thursday
+          - friday
+          - saturday
+          - sunday
+          type: string
+        time_windows:
+          items:
+            $ref: '#/components/schemas/updatePushPreferences_request_dnd_schedules_inner_time_windows_inner'
+          type: array
+      type: object
     updatePushPreferences_request:
       properties:
         block_push_from_bots:
@@ -10310,6 +10404,10 @@ components:
           type: integer
         timezone:
           type: string
+        dnd_schedules:
+          items:
+            $ref: '#/components/schemas/updatePushPreferences_request_dnd_schedules_inner'
+          type: array
       type: object
     createUserToken_request:
       properties:

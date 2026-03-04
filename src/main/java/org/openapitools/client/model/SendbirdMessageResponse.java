@@ -76,7 +76,7 @@ import org.sendbird.client.JSON;
   SendbirdMessageResponse.JSON_PROPERTY_MESSAGE_EVENTS,
   SendbirdMessageResponse.JSON_PROPERTY_EXTENDED_MESSAGE_PAYLOAD
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-04T13:37:30.293265+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-04T15:30:36.032923+09:00[Asia/Seoul]")
 public class SendbirdMessageResponse {
   public static final String JSON_PROPERTY_REQUIRE_AUTH = "require_auth";
   private Boolean requireAuth;

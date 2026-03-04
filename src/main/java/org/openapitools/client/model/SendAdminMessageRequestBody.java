@@ -50,7 +50,7 @@ import org.sendbird.client.JSON;
   SendAdminMessageRequestBody.JSON_PROPERTY_SORTED_METAARRAY
 })
 @JsonTypeName("sendAdminMessageRequestBody")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-04T13:37:30.293265+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-04T15:30:36.032923+09:00[Asia/Seoul]")
 public class SendAdminMessageRequestBody {
   public static final String JSON_PROPERTY_APNS_BUNDLE_ID = "apns_bundle_id";
   private String apnsBundleId;

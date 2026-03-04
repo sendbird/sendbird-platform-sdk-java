@@ -21,6 +21,7 @@
 |**startHour** | **Integer** |  |  [optional] |
 |**startMin** | **Integer** |  |  [optional] |
 |**timezone** | **String** |  |  [optional] |
+|**dndSchedules** | [**List&lt;UpdatePushPreferencesRequestDndSchedulesInner&gt;**](UpdatePushPreferencesRequestDndSchedulesInner.md) |  |  [optional] |
 
 
 
