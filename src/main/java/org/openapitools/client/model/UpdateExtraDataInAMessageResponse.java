@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   UpdateExtraDataInAMessageResponse.JSON_PROPERTY_SORTED_METAARRAY
 })
 @JsonTypeName("updateExtraDataInAMessageResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-04T13:37:30.293265+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-04T15:30:36.032923+09:00[Asia/Seoul]")
 public class UpdateExtraDataInAMessageResponse {
   public static final String JSON_PROPERTY_SORTED_METAARRAY = "sorted_metaarray";
   private List<SendbirdSortedMetaarrayInner> sortedMetaarray = null;

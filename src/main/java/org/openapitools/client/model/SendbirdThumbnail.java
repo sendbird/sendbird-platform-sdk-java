@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   SendbirdThumbnail.JSON_PROPERTY_URL,
   SendbirdThumbnail.JSON_PROPERTY_WIDTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-04T13:37:30.293265+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-04T15:30:36.032923+09:00[Asia/Seoul]")
 public class SendbirdThumbnail {
   public static final String JSON_PROPERTY_HEIGHT = "height";
   private Integer height;

@@ -27,6 +27,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendbirdPushTriggerOption;
+import org.openapitools.client.model.UpdatePushPreferencesRequestDndSchedulesInner;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -48,10 +49,11 @@ import org.sendbird.client.JSON;
   ViewPushPreferencesResponse.JSON_PROPERTY_SNOOZE_START_TS,
   ViewPushPreferencesResponse.JSON_PROPERTY_START_HOUR,
   ViewPushPreferencesResponse.JSON_PROPERTY_START_MIN,
-  ViewPushPreferencesResponse.JSON_PROPERTY_TIMEZONE
+  ViewPushPreferencesResponse.JSON_PROPERTY_TIMEZONE,
+  ViewPushPreferencesResponse.JSON_PROPERTY_DND_SCHEDULES
 })
 @JsonTypeName("viewPushPreferencesResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-04T13:37:30.293265+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-04T15:30:36.032923+09:00[Asia/Seoul]")
 public class ViewPushPreferencesResponse {
   public static final String JSON_PROPERTY_BLOCK_PUSH_FROM_BOTS = "block_push_from_bots";
   private Boolean blockPushFromBots;
@@ -94,6 +96,9 @@ public class ViewPushPreferencesResponse {
 
   public static final String JSON_PROPERTY_TIMEZONE = "timezone";
   private String timezone;
+
+  public static final String JSON_PROPERTY_DND_SCHEDULES = "dnd_schedules";
+  private List<UpdatePushPreferencesRequestDndSchedulesInner> dndSchedules = null;
 
   public ViewPushPreferencesResponse() { 
   }
@@ -470,6 +475,40 @@ public class ViewPushPreferencesResponse {
   }
 
 
+  public ViewPushPreferencesResponse dndSchedules(List<UpdatePushPreferencesRequestDndSchedulesInner> dndSchedules) {
+    this.dndSchedules = dndSchedules;
+    return this;
+  }
+
+  public ViewPushPreferencesResponse addDndSchedulesItem(UpdatePushPreferencesRequestDndSchedulesInner dndSchedulesItem) {
+    if (this.dndSchedules == null) {
+      this.dndSchedules = new ArrayList<>();
+    }
+    this.dndSchedules.add(dndSchedulesItem);
+    return this;
+  }
+
+   /**
+   * Get dndSchedules
+   * @return dndSchedules
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_DND_SCHEDULES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<UpdatePushPreferencesRequestDndSchedulesInner> getDndSchedules() {
+    return dndSchedules;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_DND_SCHEDULES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDndSchedules(List<UpdatePushPreferencesRequestDndSchedulesInner> dndSchedules) {
+    this.dndSchedules = dndSchedules;
+  }
+
+
   /**
    * Return true if this viewPushPreferencesResponse object is equal to o.
    */
@@ -495,12 +534,13 @@ public class ViewPushPreferencesResponse {
         Objects.equals(this.snoozeStartTs, viewPushPreferencesResponse.snoozeStartTs) &&
         Objects.equals(this.startHour, viewPushPreferencesResponse.startHour) &&
         Objects.equals(this.startMin, viewPushPreferencesResponse.startMin) &&
-        Objects.equals(this.timezone, viewPushPreferencesResponse.timezone);
+        Objects.equals(this.timezone, viewPushPreferencesResponse.timezone) &&
+        Objects.equals(this.dndSchedules, viewPushPreferencesResponse.dndSchedules);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(blockPushFromBots, doNotDisturb, enablePushForReplies, endHour, endMin, pushBlockedBotIds, pushSound, pushTriggerOption, snoozeEnabled, snoozeEndTs, snoozeStartTs, startHour, startMin, timezone);
+    return Objects.hash(blockPushFromBots, doNotDisturb, enablePushForReplies, endHour, endMin, pushBlockedBotIds, pushSound, pushTriggerOption, snoozeEnabled, snoozeEndTs, snoozeStartTs, startHour, startMin, timezone, dndSchedules);
   }
 
   @Override
@@ -521,6 +561,7 @@ public class ViewPushPreferencesResponse {
     sb.append("    startHour: ").append(toIndentedString(startHour)).append("\n");
     sb.append("    startMin: ").append(toIndentedString(startMin)).append("\n");
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
+    sb.append("    dndSchedules: ").append(toIndentedString(dndSchedules)).append("\n");
     sb.append("}");
     return sb.toString();
   }
