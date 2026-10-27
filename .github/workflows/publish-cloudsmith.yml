@@ -72,6 +72,7 @@ jobs:
           java-version: ${{ matrix.java }}
           distribution: "temurin"
           cache: maven
+          check-latest: true
 
       - name: Validate tag version matches pom version
         run: |
